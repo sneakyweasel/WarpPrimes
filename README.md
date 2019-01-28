@@ -1,21 +1,9 @@
 # Warp Primes
 
 - This repository is the Python 3 code used to generate Warp Primes.
-- Warp primes are prime numbers whose reverse of the balanced ternary representation is also prime.
+- Warp primes are prime numbers whose reverse of the balanced ternary representation is also prime or -prime.
 - Balanced ternary notation might allow insight into relations hidden by classical notation.
 - See [Wikipedia - Balanced Ternary]( https://en.wikipedia.org/wiki/Balanced_ternary)
-
-## Corresponding OEIS sequences
-
-- Warp Entry   : [OEIS A323782](https://oeis.org/A323782)
-- Warp Exit    : [OEIS A323783](https://oeis.org/A323783)
-- Warp Orphans : [OEIS A323784](https://oeis.org/A323784)
-
-## Related OEIS sequences
-
-- Subsequence of A134028: Reversal of n in balanced ternary representation.
-- Supersequence of A???: Prime palindrome in balanced ternary representation.
-- To complete...
 
 ## Warp operator
 
@@ -45,17 +33,30 @@ def a(n):
 
 ## How-to
 
-`$ pip install sympy`
+```shell
+pip install sympy
+py -3 warp.py
+```
 
-`$ py -3 warp.py`
+## Corresponding OEIS sequences
+
+- Warp Entry   : [OEIS A323782](https://oeis.org/A323782)
+- Warp Exit    : [OEIS A323783](https://oeis.org/A323783)
+- Warp Orphans : [OEIS A323784](https://oeis.org/A323784)
+
+## Related OEIS sequences
+
+- Subsequence of A134028: Reversal of n in balanced ternary representation.
+- Supersequence of A???: Prime palindrome in balanced ternary representation.
+- To complete...
 
 ## A323782 & A323783: Prime warpers (primes that warp to other primes)
 
-### Sequence
+### A323782 Sequence
 
 2,5,7,11,13,17,29,31,37,43,53,59,61,71,73,83,89,101,103,137,139,149,163,173,179,181,193,199,223,233,241,263,269,277,311,313,331,347,353,367,373,379,383,389,401,421,443,449,457,467,479,487,499,509,541,547,569,599,601,607,613,643,677,691,709,719,727,739,751,757,761,773,809,811,823,827,839,853,857,859,863,877,883,887,919,929,947,977,983
 
-### Stats
+### A323782 Stats
 
 - Percentage of warp primes below 10: 3 / 3 = 100.0 %
 - Percentage of warp primes below 100: 17 / 24 = 70.83333333333334 %
@@ -66,7 +67,7 @@ def a(n):
 - Percentage of warp primes below 10000000: 133077 / 664578 = 20.024286088314692 %
 - Percentage of warp primes below 100000000: 996574 / 5761454 = 17.297265586082958 %
 
-### Table
+### A323782 Table
 
 |index|prime|BT representation|reversed BT|warped prime|prime factors|
 | --- | --- | --- | --- | --- | --- |
@@ -126,15 +127,15 @@ def a(n):
 
 ## A323784: Orphan warp primes (primes that don't warp to primes)
 
-### Sequence
+### A323784 Sequence
 
 3,19,23,41,47,67,79,97,107,109,113,127,131,151,157,167,191,197,211,227,229,239,251,257,271,281,283,293,307,317,337,349,359,397,409,419,431,433,439,461,463,491,503,521,523,557,563,571,577,587,593,617,619,631,641,647,653,659,661,673,683,701,733,743,769,787,797,821,829,881,907,911,937,941,953,967,971,991,997
 
-### Stats
+### A323784 Stats
 
 Stats for A323784 are 100% - stats(A323782) since A323784 is the complement of A323782.
 
-### Table for A323784 (primes < 500)
+### A323784 Table for primes < 500
 
 |index|prime|BT representation|reversed BT|warped prime|prime factors|
 | --- | --- | --- | --- | --- | --- |
