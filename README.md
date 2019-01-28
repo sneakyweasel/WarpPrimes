@@ -1,4 +1,4 @@
-# Warp Primes by sneakyweasel
+# Warp Primes
 
 - Prime numbers whose reverse of the balanced ternary representation is also prime.
 - Balanced ternary notation might allow insight into relations hidden by classical notation. [Balanced Ternary]( https://en.wikipedia.org/wiki/Balanced_ternary)
