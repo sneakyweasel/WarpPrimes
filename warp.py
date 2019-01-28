@@ -16,9 +16,7 @@ oeis323784 = []
 
 # Generate primes
 primes = [i for i in sympy.primerange(0, 1000)]
-index = 0
-for prime in primes:
-    index += 1
+for index, prime in enumerate(primes):
     # Convert to balanced ternary notation string
     BTprime = str(BalancedTernary(prime))
     # Reverse string
@@ -41,7 +39,24 @@ for prime in primes:
         oeis323784.append(prime)
 
 # Display
-print("---Results---")
-print(f"WARP FROM (A323782):  {','.join(map(str,oeis323782))}")
-print(f"WARP TO   (A323783):  {','.join(map(str,oeis323783))}")
-print(f"ORPHANS   (A323784):  {','.join(map(str,oeis323784))}")
+# print("---Results---")
+# print(f"WARP FROM (A323782):  {','.join(map(str,oeis323782))}")
+# print(f"WARP TO   (A323783):  {','.join(map(str,oeis323783))}")
+# print(f"ORPHANS   (A323784):  {','.join(map(str,oeis323784))}")
+
+print("--OEIS A323784---")
+for index, prime in enumerate(oeis323784):
+    # Convert to balanced ternary notation string
+    BTprime = str(BalancedTernary(prime))
+    # Reverse string
+    BTmirror = BTprime[::-1]
+    # Convert from balanced ternary notation string
+    mirror = BalancedTernary(BTmirror).to_int()
+    # Prime factors of mirror
+    primefactors = sympy.primefactors(mirror)
+
+    # Github markdown formatting
+    format_BTprime  = " ".join(BTprime)
+    format_BTmirror = " ".join(BTmirror)
+    print(f"| {index} | {prime} | {format_BTprime} | {format_BTmirror} | {mirror} | {primefactors} |")
+    
