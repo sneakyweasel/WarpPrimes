@@ -33,7 +33,6 @@ The warp operator is a unary numerical operator that outputs the reverse of the 
 
 `$ py -3 warp.py`
 
-
 ## A323782 & A323783: Prime warpers (primes that warp to other primes)
 
 ### Sequence
@@ -51,7 +50,7 @@ The warp operator is a unary numerical operator that outputs the reverse of the 
 - Percentage of warp primes below 10000000: 133077 / 664578 = 20.024286088314692 %
 - Percentage of warp primes below 100000000: 996574 / 5761454 = 17.297265586082958 %
 
-### Array
+### Table
 
 |index|prime|BT representation|reversed BT|warped prime|prime factors|
 | --- | --- | --- | --- | --- | --- |
@@ -109,7 +108,6 @@ The warp operator is a unary numerical operator that outputs the reverse of the 
 | 51 | 487 | + - 0 0 0 0 + | + 0 0 0 0 - + | 727 | [727] |
 | 52 | 499 | + - 0 0 + + + | + + + 0 0 - + | 1051 | [1051] |
 
-
 ## A323784: Orphan warp primes (primes that don't warp to primes)
 
 ### Sequence
@@ -118,9 +116,9 @@ The warp operator is a unary numerical operator that outputs the reverse of the 
 
 ### Stats
 
-Stats are 100 - stats(A323782)
+Stats for A323784 are 100% - stats(A323782) since A323784 is the complement of A323782.
 
-### Array
+### Table for A323784 (primes < 500)
 
 |index|prime|BT representation|reversed BT|warped prime|prime factors|
 | --- | --- | --- | --- | --- | --- |
@@ -308,49 +306,35 @@ Stats are 100 - stats(A323782)
 
 ### Python Code from A117966: Balanced ternary enumeration (or balanced ternary representation) of integers; write n in ternary and then replace 2's with (-1)'s
 
-`def a(n):
-
+```
+def a(n):
     if n==0: return 0
-
     if n%3==0: return 3*a(n/3)
-
     elif n%3==1: return 3*a((n - 1)/3) + 1
-
     else: return 3*a((n - 2)/3) - 1`
+```
 
 ### Python Code from A134028: Reversal of n in balanced ternary representation
 
-`def a(n):
-
+```
+def a(n):
     if n==0: return 0
-
     s=[]
-
     x=0
-
     while n>0:
-
         x=n%3
-
         n=n/3
-
         if x==2:
-
             x=-1
-
             n+=1
-
         s+=[x, ]
-
     l=s[::-1]
-
     t=0
-
     for i in xrange(len(l)): t+=l[i]*3**i
+    return t
+```
 
-    return t`
-
-## Comparative chart
+### Comparative table between A117966 & A134028
 
 |index|A117966 operator|A323782 & A134028 warp operator|
 | --- | --- | --- |
