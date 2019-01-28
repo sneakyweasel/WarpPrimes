@@ -67,9 +67,9 @@ py -3 warp.py
 - Percentage of warp primes below 10000000: 133077 / 664578 = 20.024286088314692 %
 - Percentage of warp primes below 100000000: 996574 / 5761454 = 17.297265586082958 %
 
-### A323782 Table
+### A323782 & A323783 Table for primes < 500
 
-|index|prime|BT representation|reversed BT|warped prime|prime factors|
+|index|A323782|BT representation|reversed BT|A323783|prime factors|
 | --- | --- | --- | --- | --- | --- |
 | 0 | 2 | + - | - + | -2 | [2] |
 | 1 | 5 | + - - | - - + | -11 | [11] |
@@ -219,7 +219,7 @@ Stats for A323784 are 100% - stats(A323782) since A323784 is the complement of A
 | 77 | 991 | + + 0 + - 0 + | + 0 - + 0 + + | 679 | [7, 97] |
 | 78 | 997 | + + 0 + 0 - + | + - 0 + 0 + + | 517 | [11, 47] |
 
-## Table for primes < 500
+## Mixed A323782 and A323784 table for primes < 500
 
 |index|prime|BT representation|reversed BT|warped prime|prime factors|
 | --- | --- | --- | --- | --- | --- |
@@ -331,7 +331,7 @@ def a(n):
     else: return 3*a((n - 2)/3) - 1`
 ```
 
-### Python Code from A134028: Reversal of n in balanced ternary representation
+### Python Code from A134028: Reversal of n in balanced ternary representation (broken)
 
 ```python
 def a(n):
