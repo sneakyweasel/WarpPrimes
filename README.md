@@ -1,21 +1,22 @@
 # Warp Primes
 
-- Prime numbers whose reverse of the balanced ternary representation is also prime.
+- This repository is the Python 3 code used to generate Warp Primes.
+- Warp primes are prime numbers whose reverse of the balanced ternary representation is also prime.
 - Balanced ternary notation might allow insight into relations hidden by classical notation. [Balanced Ternary]( https://en.wikipedia.org/wiki/Balanced_ternary)
 
-## Warp operator
-
-The warp operator is a unary numerical operator that outputs the reverse of the balanced ternary representation of a number.
-
-- Convert number to balanced ternary representation
-- Reverse balanced ternary representation
-- Convert reversed balanced ternary representation to number
-
-Python code used to generate Warp Primes:
+## Corresponding OEIS sequences
 
 - Warp Entry   : [OEIS A323782](https://oeis.org/A323782)
 - Warp Exit    : [OEIS A323783](https://oeis.org/A323783)
 - Warp Orphans : [OEIS A323784](https://oeis.org/A323784)
+
+## Warp operator
+
+The warp operator is a unary numerical operator that outputs the reverse of the balanced ternary representation of a number following this process:
+
+- Convert "classical" number to balanced ternary representation
+- Reverse balanced ternary representation
+- Convert reversed balanced ternary representation to "classical" number
 
 ## How-to
 
