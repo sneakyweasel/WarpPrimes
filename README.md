@@ -19,13 +19,29 @@
 
 ## Warp operator
 
-The warp operator is described in A134028: Reversal of n in balanced ternary representation.
-
-The warp operator is a unary numerical operator that outputs the reverse of the balanced ternary representation of a number following this process:
+The warp operator is an unary numerical operator described in A134028: Reversal of n in balanced ternary representation as:
 
 - Convert "classical" number to balanced ternary representation
 - Reverse balanced ternary representation
 - Convert reversed balanced ternary representation to "classical" number
+
+```python
+def a(n):
+    if n==0: return 0
+    s=[]
+    x=0
+    while n>0:
+        x=n%3
+        n=n/3
+        if x==2:
+            x=-1
+            n+=1
+        s+=[x, ]
+    l=s[::-1]
+    t=0
+    for i in xrange(len(l)): t+=l[i]*3**i
+    return t
+```
 
 ## How-to
 
@@ -306,7 +322,7 @@ Stats for A323784 are 100% - stats(A323782) since A323784 is the complement of A
 
 ### Python Code from A117966: Balanced ternary enumeration (or balanced ternary representation) of integers; write n in ternary and then replace 2's with (-1)'s
 
-```
+```python
 def a(n):
     if n==0: return 0
     if n%3==0: return 3*a(n/3)
@@ -316,7 +332,7 @@ def a(n):
 
 ### Python Code from A134028: Reversal of n in balanced ternary representation
 
-```
+```python
 def a(n):
     if n==0: return 0
     s=[]
