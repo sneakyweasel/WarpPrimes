@@ -14,9 +14,10 @@ $ pip install sympy
 
 $ py -3 warp.py
 
-## Table
+## Table for primes < 1000
 
 |index|prime|BT representation|reversed BT representation|warped prime|prime factors|
+| --- | --- | --- | --- | --- | --- |
 | 1 | 2 | + - | - + | -2 | [2] |
 | 2 | 3 | + 0 | 0 + | 1 | [] |
 | 3 | 5 | + - - | - - + | -11 | [11] |
