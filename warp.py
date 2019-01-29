@@ -49,7 +49,7 @@ def a117966(n):
 
 
 # Generate primes
-ulimit = 50000
+ulimit = 100000
 primes = [i for i in sympy.primerange(0, ulimit)]
 
 # Choose to loop primes or integers
@@ -83,23 +83,29 @@ for index, prime in enumerate(primes):
         # print(f"| {index} | {prime} | {ternA117966} | {format_BTprime} | {format_BTmirror} | {mirror} | {primefactors} |")
         oeis323784.append(prime)
 
-    # Create b-lists and csvs for viz
+    # Create b-lists and jss for viz
     # file = open("bfile_A323782.txt", "w") 
-    file = open("A323782.csv", "w") 
+    file = open("A323782.txt", "w") 
+    file.write(f"var A323782 = [") 
     for index, prime in enumerate(oeis323782):
-        file.write(f"{prime}\n") 
+        file.write(f"{prime},") 
+    file.write(f"];") 
     file.close()
 
     # file = open("bfile_A323783.txt", "w") 
-    file = open("A323783.csv", "w") 
+    file = open("A323783.txt", "w") 
+    file.write(f"var A323783 = [") 
     for index, prime in enumerate(oeis323783):
-        file.write(f"{prime}\n") 
+        file.write(f"{prime},") 
+    file.write(f"];") 
     file.close()
 
     # file = open("bfile_A323784.txt", "w") 
-    file = open("A323784.csv", "w") 
+    file = open("A323784.txt", "w") 
+    file.write(f"var A323784 = [") 
     for index, prime in enumerate(oeis323784):
-        file.write(f"{prime}\n") 
+        file.write(f"{prime},") 
+    file.write(f"];") 
     file.close()
 
 
