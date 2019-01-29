@@ -19,22 +19,12 @@ The warp operator is an unary numerical operator described in A134028: Reversal 
 - Reverse balanced ternary representation
 - Convert reversed balanced ternary representation to "classical" number
 
-```python
-def a(n):
-    if n==0: return 0
-    s=[]
-    x=0
-    while n>0:
-        x=n%3
-        n=n/3
-        if x==2:
-            x=-1
-            n+=1
-        s+=[x, ]
-    l=s[::-1]
-    t=0
-    for i in xrange(len(l)): t+=l[i]*3**i
-    return t
+```PARI
+d3(n) = if ((n%3)==2, n\3+1, n\3);
+m3(n) = if ((n%3)==2, -1, n % 3);
+t(n) = if (n==0, [0], if (abs(n) == 1, [n], concat(m3(n), t(d3(n)))));
+f(n) = subst(Pol(Vec(t(n))), x, 3);
+isok(n) = isprime(n) && isprime(abs(f(n))); \\ _Michel Marcus_, Jan 29 2019 
 ```
 
 ## How-to
