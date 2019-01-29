@@ -5,6 +5,12 @@
 - Balanced ternary notation might allow insight into relations hidden by classical notation.
 - See [Wikipedia - Balanced Ternary]( https://en.wikipedia.org/wiki/Balanced_ternary)
 
+## Dynamic Ulam Spiral Visualization
+
+- Download and launch the index.html file in a browser to access the D3 visualization.
+
+![Ulam Spiral of A323782 and A323784](https://github.com/sneakyweasel/WarpPrimes/raw/master/ulamSpiral.PNG)
+
 ## Warp operator
 
 The warp operator is an unary numerical operator described in A134028: Reversal of n in balanced ternary representation as:
