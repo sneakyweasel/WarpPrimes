@@ -49,7 +49,7 @@ def a117966(n):
 
 
 # Generate primes
-ulimit = 1000
+ulimit = 50000
 primes = [i for i in sympy.primerange(0, ulimit)]
 
 # Choose to loop primes or integers
@@ -80,8 +80,28 @@ for index, prime in enumerate(primes):
         oeis323782.append(prime)
         oeis323783.append(mirror)
     else:
-        print(f"| {index} | {prime} | {ternA117966} | {format_BTprime} | {format_BTmirror} | {mirror} | {primefactors} |")
+        # print(f"| {index} | {prime} | {ternA117966} | {format_BTprime} | {format_BTmirror} | {mirror} | {primefactors} |")
         oeis323784.append(prime)
+
+    # Create b-lists and csvs for viz
+    # file = open("bfile_A323782.txt", "w") 
+    file = open("A323782.csv", "w") 
+    for index, prime in enumerate(oeis323782):
+        file.write(f"{prime}\n") 
+    file.close()
+
+    # file = open("bfile_A323783.txt", "w") 
+    file = open("A323783.csv", "w") 
+    for index, prime in enumerate(oeis323783):
+        file.write(f"{prime}\n") 
+    file.close()
+
+    # file = open("bfile_A323784.txt", "w") 
+    file = open("A323784.csv", "w") 
+    for index, prime in enumerate(oeis323784):
+        file.write(f"{prime}\n") 
+    file.close()
+
 
 # print("--OEIS A323782---")
 # print(f"Sequence:  {','.join(map(str,oeis323782))}")
@@ -94,37 +114,34 @@ for index, prime in enumerate(primes):
 #     mirror = BalancedTernary(BTmirror).to_int()
 #     # Prime factors of mirror
 #     primefactors = sympy.primefactors(mirror)
-
 #     # Github markdown formatting
 #     format_BTprime  = " ".join(BTprime)
 #     format_BTmirror = " ".join(BTmirror)
 #     print(f"| {index} | {prime} | {format_BTprime} | {format_BTmirror} | {mirror} | {primefactors} |")
 
 
-print("--OEIS A323784---")
-sequence_260 = ','.join(map(str,oeis323784))[0:260:]
-print(f"Sequence:  {sequence_260}")
-print("\n")
-print(f"|index|prime|BT representation|reversed BT|warped prime|prime factors|")
-print(f"| --- | --- | --- | --- | --- | --- |")
-
-for index, prime in enumerate(oeis323784):
-    # Convert to balanced ternary notation string
-    BTprime = str(BalancedTernary(prime))
-    # Reverse string
-    BTmirror = BTprime[::-1]
-    # Convert from balanced ternary notation string
-    mirror = BalancedTernary(BTmirror).to_int()
-    # Prime factors of mirror
-    primefactors = sympy.primefactors(mirror)
-
-    # Github markdown formatting
-    format_BTprime  = " ".join(BTprime)
-    format_BTmirror = " ".join(BTmirror)
-    print(f"| {index} | {prime} | {format_BTprime} | {format_BTmirror} | {mirror} | {primefactors} |")
+# print("--OEIS A323784---")
+# sequence_260 = ','.join(map(str,oeis323784))[0:260:]
+# print(f"Sequence:  {sequence_260}")
+# print("\n")
+# print(f"|index|prime|BT representation|reversed BT|warped prime|prime factors|")
+# print(f"| --- | --- | --- | --- | --- | --- |")
+# for index, prime in enumerate(oeis323784):
+#     # Convert to balanced ternary notation string
+#     BTprime = str(BalancedTernary(prime))
+#     # Reverse string
+#     BTmirror = BTprime[::-1]
+#     # Convert from balanced ternary notation string
+#     mirror = BalancedTernary(BTmirror).to_int()
+#     # Prime factors of mirror
+#     primefactors = sympy.primefactors(mirror)
+#     # Github markdown formatting
+#     format_BTprime  = " ".join(BTprime)
+#     format_BTmirror = " ".join(BTmirror)
+#     print(f"| {index} | {prime} | {format_BTprime} | {format_BTmirror} | {mirror} | {primefactors} |")
 
 
-# Display results
+# Display stats
 # print("---Results A323782 & A323783---")
 # print(f"WARP FROM (A323782):  {','.join(map(str,oeis323782))}")
 # print(f"WARP TO   (A323783):  {','.join(map(str,oeis323783))}")

@@ -40,6 +40,8 @@ py -3 warp.py
 
 ## Corresponding OEIS sequences
 
+B-files of A323782, A323783 and A323784 are provided for primes < 1000000.
+
 - Warp Entry   : [OEIS A323782](https://oeis.org/A323782)
 - Warp Exit    : [OEIS A323783](https://oeis.org/A323783)
 - Warp Orphans : [OEIS A323784](https://oeis.org/A323784)
